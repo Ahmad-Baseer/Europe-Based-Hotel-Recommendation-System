@@ -1,0 +1,35 @@
+name: Sync specific files to Hugging Face hub
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Hugging Face CLI
+        run: |
+          pip install -U "huggingface_hub[cli]"
+
+      - name: Login to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          huggingface-cli login --token $HF_TOKEN
+
+      - name: Upload specific files to Hugging Face
+        run: |
+          huggingface-cli upload AhmadHashim/Europe-based-hotel-recommendation-system ./Hotel_Recommendation_System.ipynb --repo-type=space --commit-message="Sync local Space with Hub"
+          huggingface-cli upload AhmadHashim/Europe-based-hotel-recommendation-system ./Hotel_Reviews.zip --repo-type=space --commit-message="Sync local Space with Hub"
+          huggingface-cli upload AhmadHashim/Europe-based-hotel-recommendation-system ./requirements.txt --repo-type=space --commit-message="Sync local Space with Hub"
+          huggingface-cli upload AhmadHashim/Europe-based-hotel-recommendation-system ./style.css --repo-type=space --commit-message="Sync local Space with Hub"
+          huggingface-cli upload AhmadHashim/Europe-based-hotel-recommendation-system ./Web_App.py --repo-type=space --commit-message="Sync local Space with Hub"
