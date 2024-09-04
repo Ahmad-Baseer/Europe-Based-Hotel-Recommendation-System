@@ -9,7 +9,7 @@ app_file: Web_App.py
 pinned: false
 ---
 
-Status Badge: [![Sync to Hugging Face hub](https://github.com/Ahmad-Baseer/Europe-Based-Hotel-Recommendation-System/actions/workflows/CD_to_HuggingFace.yml/badge.svg)](https://github.com/Ahmad-Baseer/Europe-Based-Hotel-Recommendation-System/actions/workflows/CD_to_HuggingFace.yml)
+Status Badge: [![Sync to Hugging Face hub](https://github.com/Ahmad-Baseer/Europe-Based-Hotel-Recommendation-System/actions/workflows/CD_to_HuggingFace.yml/badge.svg)](https://github.com/Ahmad-Baseer/Europe-Based-Hotel-Recommendation-System/actions/workflows/CD_to_HuggingFace.yml/)
 
 # How to run the application
 
