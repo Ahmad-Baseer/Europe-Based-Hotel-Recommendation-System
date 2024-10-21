@@ -47,14 +47,6 @@ with st.container():
         st.write("##")
         st.write("##")
         description = st.text_area("Description", placeholder="Enter a description of your trip (e.g. [' Leisure trip ', ' Group ', ' Duplex Double Room ', ' Stayed 1 night '])")
-        st.write(tags)
-        
-    with midr_col:
-        st.write("##")
-        st.write("##")
-        category=st.selectbox("Category",("Couple","Solo Traveller","With a pet","Group","Family with young children",
-                                         "Family with older children","Travelers with friends"))
-        st.write(category)
         
     with right_col:
         st_lottie(lottie_hotel,height=250,key="hotel")
