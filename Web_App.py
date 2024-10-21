@@ -35,7 +35,7 @@ lottie_hotel=load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_xrptz
     
 with st.container():
     st.write("---")
-    left_col,midl_col,midr_col,right_col=st.columns(4)
+    left_col,midl_col,right_col=st.columns(3)
     
     with left_col:
         st.write("##")
@@ -46,7 +46,7 @@ with st.container():
     with midl_col:
         st.write("##")
         st.write("##")
-        tags=st.selectbox("Tags",("Business trip","Leisure trip"))
+        description = st.text_area("Description", placeholder="Enter a description of your trip (e.g. [' Leisure trip ', ' Group ', ' Duplex Double Room ', ' Stayed 1 night '])")
         st.write(tags)
         
     with midr_col:
@@ -65,7 +65,7 @@ with st.container():
         
     with st.container():
         if(button):
-            st.dataframe(recommender(country,tags+'  '+category))
+            st.dataframe(recommender(country,description))
             st.balloons()
             st.snow()
         
